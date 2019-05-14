@@ -14,7 +14,7 @@ public class FileReader {
         FileInputStream fileStream = new FileInputStream(path);
         BufferedReader br = new BufferedReader(new InputStreamReader(fileStream));
 
-        while ((strLine = br.readLine()) != null)   {
+        while ((strLine = br.readLine()) != null) {
             String [] token = strLine.split(", ");
 
             Record record = new Record();
@@ -24,9 +24,13 @@ public class FileReader {
             record.setDateFrom(token[2].trim());
 
             if (token.length > 3) {
-                record.setDateTo(token[3].trim());
+                if ("null".equals(token[3])){
+                    record.setDateTo(null);
+                } else {
+                    record.setDateTo(token[3].trim());
+                }
             } else {
-                record.setDateTo("");
+                record.setDateTo(null);
             }
             records.add(record);
         }
