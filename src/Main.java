@@ -1,10 +1,8 @@
 import config.Config;
 import data.CollectiveProject;
 import data.Record;
-
 import java.io.IOException;
 import java.util.List;
-
 import static utils.EmployeeFinder.findEmployees;
 import static utils.FileReader.readFile;
 
