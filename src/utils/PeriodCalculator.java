@@ -6,7 +6,6 @@ import java.util.concurrent.TimeUnit;
 class PeriodCalculator {
 
     static long getPeriod(Date firstStart, Date firstEnd, Date secondStart, Date secondEnd) {
-
         Date maxStart = firstStart.getTime() > secondStart.getTime() ? firstStart : secondStart;
         Date minEnd = firstEnd.getTime() < secondEnd.getTime() ? firstEnd : secondEnd;
 

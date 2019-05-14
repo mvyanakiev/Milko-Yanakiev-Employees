@@ -3,7 +3,6 @@ package data;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import static config.Config.DATA_FORMAT;
 
 public class Record {
@@ -46,7 +45,7 @@ public class Record {
     }
 
     public void setDateTo(String dateTo) {
-        if (dateTo == null || dateTo.isEmpty()) {
+        if ((dateTo == null) || (dateTo.isEmpty())) {
             this.dateTo = new Date();
         } else {
             this.dateTo = dataParser(dateTo);

@@ -1,7 +1,6 @@
 package utils;
 
 import data.Record;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +8,13 @@ import java.util.List;
 public class FileReader {
 
     public static List<Record> readFile(String path) throws IOException {
-    List<Record> records = new ArrayList<>();
+        String strLine;
+        List<Record> records = new ArrayList<>();
+
         FileInputStream fileStream = new FileInputStream(path);
         BufferedReader br = new BufferedReader(new InputStreamReader(fileStream));
-        String strLine;
 
         while ((strLine = br.readLine()) != null)   {
-
             String [] token = strLine.split(", ");
 
             Record record = new Record();

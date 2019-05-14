@@ -2,15 +2,14 @@ package utils;
 
 import data.CollectiveProject;
 import data.Record;
-
 import java.util.List;
-
 import static utils.PeriodCalculator.getPeriod;
 
 public class EmployeeFinder {
 
     public static CollectiveProject findEmployees(List<Record> records){
         CollectiveProject project = new CollectiveProject();
+
         project.setPeriod(0);
         project.setFirstEmployeeId("");
         project.setSecondEmployeeId("");
@@ -23,7 +22,6 @@ public class EmployeeFinder {
                 Record second = records.get(j);
 
                 if (first.getProjectId().equals(second.getProjectId())) {
-
                     long period = getPeriod(
                             first.getDateFrom(),
                             first.getDateTo(),
@@ -31,8 +29,7 @@ public class EmployeeFinder {
                             second.getDateTo()
                     );
 
-                    if (period > 0 && period > project.getPeriod()) {
-
+                    if ((period > 0) && (period > project.getPeriod())) {
                         project.setPeriod(period);
                         project.setFirstEmployeeId(first.getEmployeeId());
                         project.setSecondEmployeeId(second.getEmployeeId());
