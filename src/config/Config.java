@@ -1,7 +1,9 @@
 package config;
 
 public class Config {
-    public static final String FILE_PATH = "src\\inputData\\testData.txt";
+//    public static final String FILE_PATH = "src\\inputData\\testData.txt"; // windows path
+
+    public static final String FILE_PATH = "src/inputData/testData.txt"; // mac path
 
     public static final String DATA_FORMAT = "yyyy-MM-dd";
 
